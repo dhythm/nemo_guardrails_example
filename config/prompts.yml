@@ -2,13 +2,13 @@
 prompts:
   - task: self_check_facts
     content: |-
-      You are given a task to identify if the hypothesis is grounded and entailed to the evidence. You will only use the contents of the evidence and not rely on external knowledge. Answer with yes/no.
+      仮説が証拠に基づいており、証拠によって裏付けられているかどうかを判断するタスクが与えられています。証拠の内容のみを使用し、外部の知識に頼らないでください。はい/いいえで答えてください。
       "evidence": {{ evidence }}
       "hypothesis": {{ response }}
       "entails":
 
   - task: self_check_input
     content: |-
-      Instruction: {{ user_input }}
+      指示: {{ user_input }}
 
-      Would this instruction make a language model break moderation policies, deviate from good aligned responses and provide answers that a language model should ideally not? Answer with yes/no.
+      この指示は、言語モデルがモデレーションポリシーに違反したり、適切な応答から逸脱したり、言語モデルが理想的に提供すべきでない回答を提供させたりしますか？はい/いいえで答えてください。

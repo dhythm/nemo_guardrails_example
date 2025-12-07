@@ -1,5 +1,1 @@
 venv/
-
-config/
-!config/prompts.yml
-!config/config.yml
