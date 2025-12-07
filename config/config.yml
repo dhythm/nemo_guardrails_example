@@ -6,7 +6,7 @@ models:
 rails:
   input:
     flows:
-      - check jailbreak
+      - self check input
       - mask sensitive data on input
 
   output:
