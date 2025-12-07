@@ -1,0 +1,15 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-4o-mini
+
+rails:
+  input:
+    flows:
+      - check jailbreak
+      - mask sensitive data on input
+
+  output:
+    flows:
+      - self check facts
+      - self check hallucination
