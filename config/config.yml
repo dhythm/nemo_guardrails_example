@@ -13,3 +13,5 @@ rails:
     flows:
       - self check facts
       - self check hallucination
+    streaming:
+      enabled: True
