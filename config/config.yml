@@ -7,11 +7,11 @@ rails:
   input:
     flows:
       - self check input
-      - mask sensitive data on input
+      # - mask sensitive data on input
 
-  output:
-    flows:
-      - self check facts
-      - self check hallucination
-    streaming:
-      enabled: True
+#  output:
+#    flows:
+#      - self check facts
+#      - self check hallucination
+#    streaming:
+#      enabled: True

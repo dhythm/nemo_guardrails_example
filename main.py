@@ -58,10 +58,11 @@ unsafe_prompts_en = {
 }
 
 
-# Start an asynchronous stream response.
-async def stream_response(messages):
-    async for chunk in rails.stream_async(messages=messages):
-        print(chunk, end="")
+# Generate a response and print it.
+async def generate_response(messages):
+    response = await rails.generate_async(messages=messages)
+    if response:
+        print(response.get("content"))
     print("\n" + "="*50 + "\n")
 
 
@@ -72,7 +73,7 @@ async def run_test_suite(prompts, language_code):
         print(f"User > {prompt}")
         print("Bot > ", end="")
         messages = [{"role": "user", "content": prompt}]
-        await stream_response(messages)
+        await generate_response(messages)
 
     # Also test a safe input
     print("--- Testing Category: Safe Input ---")
@@ -80,7 +81,7 @@ async def run_test_suite(prompts, language_code):
     print(f"User > {safe_prompt}")
     print("Bot > ", end="")
     messages_safe = [{"role": "user", "content": safe_prompt}]
-    await stream_response(messages_safe)
+    await generate_response(messages_safe)
 
 
 async def main():
